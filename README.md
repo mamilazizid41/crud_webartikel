@@ -81,18 +81,6 @@ A simple CMS-style web application built with **CodeIgniter 4** that allows user
 
 ---
 
-## 🧪 Dummy Login (Optional)
-
-You can insert a test user:
-
-```sql
-INSERT INTO users (username, email, password, created_at) 
-VALUES ('admin', 'admin@example.com', '$2y$10$YOUR_HASHED_PASSWORD', NOW());
-```
-
-Replace `$2y$...` with a bcrypt-hashed password (`password_hash('yourpassword', PASSWORD_DEFAULT)`)
-
----
 
 ## 🧱 Folder Structure (Key Parts)
 
