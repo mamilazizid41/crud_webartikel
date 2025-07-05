@@ -15,6 +15,11 @@ class CreateArticlesAndUsers extends Migration
             'content' => ['type' => 'TEXT'],
             'created_at' => ['type' => 'DATETIME', 'null' => true],
             'updated_at' => ['type' => 'DATETIME', 'null' => true],
+            'status'     => [ 
+                'type'       => 'ENUM',
+                'constraint' => ['draft', 'published'],
+                'default'    => 'draft',
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('articles');

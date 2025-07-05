@@ -42,13 +42,16 @@ class ArticleController extends Controller {
 
     public function index() {
         $feedbackModel = new \App\Models\FeedbackModel();
+        $db = \Config\Database::connect();
         $search = $this->request->getGet('search');
         $query = $this->articleModel;
         if ($search) $query = $query->like('title', $search);
         $data['articles'] = $this->articleModel->orderBy('created_at', 'DESC')->paginate(5, 'articles');
         $data['pager'] = $this->articleModel->pager;
         $data["totalArticles"] = $this->articleModel->countAll();
-        $data["totalFeedback"] = $feedbackModel->countAll();
+        $data["totalFeedback"] = $db->table('feedback')
+            ->join('articles', 'articles.id = feedback.article_id')
+            ->countAllResults();
         
         return view('articles/index', $data);
     }
