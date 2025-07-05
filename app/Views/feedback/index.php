@@ -8,6 +8,7 @@
             <th>Email</th>
             <th>Comment</th>
             <th>Article</th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,13 @@
             <td><?= esc($item['email']) ?></td>
             <td><?= esc($item['comment']) ?></td>
             <td><?= esc($item['article_title']) ?></td>
+            <td>
+                <?php if ($item['article_status'] === 'draft'): ?>
+                    <span class="badge bg-warning text-dark">Draft</span>
+                <?php else: ?>
+                    <span class="badge bg-success">Published</span>
+                <?php endif; ?>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>

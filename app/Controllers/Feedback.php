@@ -53,9 +53,11 @@ class Feedback extends BaseController
         $model = new FeedbackModel();
         $articleModel = new ArticleModel();
 
-        $feedback = $model->select('feedback.*, articles.title as article_title')
-                          ->join('articles', 'articles.id = feedback.article_id')
-                          ->findAll();
+        $feedback = $model
+    ->select('feedback.*, articles.title as article_title, articles.status as article_status')
+    ->join('articles', 'articles.id = feedback.article_id')
+    ->findAll();
+
 
         return view('feedback/index', ['feedback' => $feedback]);
     }

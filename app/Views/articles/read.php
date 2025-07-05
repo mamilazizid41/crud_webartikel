@@ -4,6 +4,9 @@
   <div class="card mb-4 shadow">
     <div class="card-body">
       <h2 class="card-title"><?= esc($article['title']) ?></h2>
+      <small class="text-muted">
+        Published on <?= date('F j, Y \a\t H:i', strtotime($article['created_at'])) ?>
+    </small>
       <hr>
       <!-- Display HTML content safely (no escaping) -->
       <div class="card-text">
@@ -12,29 +15,30 @@
     </div>
   </div>
 
-  <!-- Feedback Form -->
-  <div class="card mb-4">
-    <div class="card-header bg-light">Leave Feedback</div>
+ <hr>
+<h5>Leave Feedback</h5>
+<div class="card shadow-sm mb-4" style="max-width: 600px;">
     <div class="card-body">
-      <form method="post" action="<?= site_url('feedback/store/' . $article['id']) ?>">
-        <?= csrf_field() ?>
-        <div class="mb-3">
-  <label>Your Name</label>
-  <input type="text" name="name" class="form-control" required>
-</div>
-
-<div class="mb-3">
-  <label>Your Email</label>
-  <input type="email" name="email" class="form-control" required>
-</div>
-
-        <div class="mb-3">
-          <label>Your Feedback</label>
-          <textarea name="comment" class="form-control" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <form method="post" action="<?= site_url('feedback/store/'.$article['id']) ?>">
+            <div class="mb-3">
+                <label class="form-label">Your Name</label>
+                <input type="text" name="name" class="form-control form-control-sm" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Your Email</label>
+                <input type="email" name="email" class="form-control form-control-sm" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Your Feedback</label>
+                <textarea name="comment" class="form-control form-control-sm" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">
+                Submit
+            </button>
+        </form>
     </div>
+</div>
+
   </div>
   <?php if (session()->getFlashdata('errors')): ?>
   <div class="alert alert-danger">

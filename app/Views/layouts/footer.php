@@ -5,16 +5,22 @@
     <small>&copy; <?= date('Y') ?> My Articles App. All rights reserved.</small>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- jQuery (required), Popper (if not already loaded), Bootstrap, and Summernote JS -->
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote.min.js"></script>
 
 <script>
-  $(document).ready(function () {
+  $(document).ready(function() {
     $('#summernote').summernote({
-      height: 200
+      height: 200,
+      toolbar: [
+        ['font', ['bold', 'italic', 'underline', 'clear']],
+        ['fontsize', ['fontsize']],
+        ['para', ['ul', 'ol']],
+        ['view', ['codeview']]
+      ]
     });
   });
 </script>

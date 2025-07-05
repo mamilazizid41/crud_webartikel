@@ -13,9 +13,7 @@ helper('text');
     <div class="card mb-3 shadow-sm">
       <div class="card-body">
         <h5 class="card-title"><?= esc($article['title']) ?></h5>
-        <p class="card-text">
-          <?= esc(character_limiter(strip_tags($article['content']), 50)) ?>
-        </p>
+        <p class="card-text"><?= character_limiter(strip_tags(html_entity_decode($article['content'])), 150) ?></p>
         <a href="<?= site_url('articles/read/' . $article['id']) ?>" class="btn btn-sm btn-outline-primary">
           Read More
         </a>
