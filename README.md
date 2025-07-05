@@ -1,11 +1,3 @@
-Sure! Here's the full `README.md` file as code so you can copy and paste it directly into your project:
-
-````markdown
-# 📰 CodeIgniter 4 Articles Website
-
-A simple CMS-style web application built with **CodeIgniter 4** that allows users to register, log in, and manage articles with feedback support. Includes a public-facing page, admin dashboard, authentication, search, pagination, and Bootstrap styling.
-
----
 
 ## 🚀 Features
 
@@ -19,9 +11,8 @@ A simple CMS-style web application built with **CodeIgniter 4** that allows user
 - ✅ Rich-text editor (Summernote)
 - ✅ SweetAlert confirmation & success messages
 - ✅ Sidebar shows 3 latest articles
-- ✅ Search and pagination (articles & dashboard)
+- ✅ Pagination (articles & dashboard)
 - ✅ Draft/publish article support
-- ✅ Role-based UI (sidebar hidden on login/register)
 
 ---
 
@@ -38,8 +29,8 @@ A simple CMS-style web application built with **CodeIgniter 4** that allows user
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ci4-articles.git
-   cd ci4-articles
+   git clone https://github.com/mamilazizid41/ci4-articles.git
+   cd crud_webartikel
 ````
 
 2. **Install dependencies**
@@ -51,7 +42,7 @@ A simple CMS-style web application built with **CodeIgniter 4** that allows user
 3. **Copy and edit the environment file**
 
    ```bash
-   cp .env.example .env
+   cp env .env
    php spark key:generate
    ```
 
@@ -80,26 +71,3 @@ A simple CMS-style web application built with **CodeIgniter 4** that allows user
    Visit: [http://localhost:8080](http://localhost:8080)
 
 ---
-
-
-## 🧱 Folder Structure (Key Parts)
-
-```
-app/
-├── Controllers/
-│   ├── ArticleController.php
-│   ├── AuthController.php
-│   └── FeedbackController.php
-├── Models/
-│   ├── ArticleModel.php
-│   ├── UserModel.php
-│   └── FeedbackModel.php
-├── Views/
-│   ├── articles/
-│   ├── auth/
-│   ├── feedback/
-│   └── layouts/
-├── Cells/
-│   └── LatestArticles.php
-└── Database/
-    └── Migrations/
