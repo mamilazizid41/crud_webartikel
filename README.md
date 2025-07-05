@@ -115,27 +115,3 @@ app/
 │   └── LatestArticles.php
 └── Database/
     └── Migrations/
-```
-
----
-
-## ✨ Credits
-
-Created by \[Your Name]
-Powered by [CodeIgniter 4](https://codeigniter.com/)
-
----
-
-## 📜 License
-
-This project is open-source under the [MIT License](LICENSE).
-
-```
-
-Let me know if you want:
-- A `LICENSE` file
-- `.env.example` scaffold
-- Auto-deploy config (e.g. GitHub Actions)
-
-I'm ready to help you make this repo complete!
-```
