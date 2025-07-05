@@ -29,7 +29,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/mamilazizid41/ci4-articles.git
+   git clone https://github.com/mamilazizid41/crud_webartikel.git
    cd crud_webartikel
 ````
 
@@ -43,7 +43,6 @@
 
    ```bash
    cp env .env
-   php spark key:generate
    ```
 
 4. **Set your database credentials** in `.env`:
